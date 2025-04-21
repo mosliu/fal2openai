@@ -1,0 +1,15 @@
+services:
+  fal-proxy:
+    build: .
+    container_name: fal-proxy
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - FAL_KEY=${FAL_KEY}
+      - API_KEY=${API_KEY}
+      - PORT=3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped

@@ -1,0 +1,24 @@
+{
+  "name": "fal2openai",
+  "version": "1.0.0",
+  "description": "FAL to OpenAI API proxy service",
+  "main": "example.js",
+  "type": "module",
+  "scripts": {
+    "start": "node run-server.js",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:dev": "docker-compose up",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fal-ai/client": "^1.4.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
