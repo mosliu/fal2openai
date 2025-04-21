@@ -1,6 +1,6 @@
-# FAL to OpenAI API Proxy (Python Version)
+# FAL to OpenAI API Proxy (Node.js Version)
 
-This is a Python implementation of the FAL to OpenAI API proxy. It provides a compatibility layer that allows you to use FAL AI models with OpenAI-compatible API clients.
+This is a Node.js implementation of the FAL to OpenAI API proxy. It provides a compatibility layer that allows you to use FAL AI models with OpenAI-compatible API clients.
 
 ## Features
 
@@ -16,22 +16,26 @@ This is a Python implementation of the FAL to OpenAI API proxy. It provides a co
 
 1. Clone this repository
 2. Install dependencies:
-   ```
-   pip install -r requirements.txt
+   ```bash
+   npm install
+   # or
+   pnpm install
    ```
 
 ## Configuration
 
-Set your FAL AI API key as an environment variable:
+Set your FAL AI API key and custom API key as environment variables:
 
 ```bash
 export FAL_KEY=your-fal-ai-api-key
+export API_KEY=your-custom-api-key
 ```
 
-You can also use a `.env` file with python-dotenv:
+You can also use a `.env` file:
 
 ```
 FAL_KEY=your-fal-ai-api-key
+API_KEY=your-custom-api-key
 PORT=3000
 ```
 
@@ -40,10 +44,27 @@ PORT=3000
 Start the server:
 
 ```bash
-python example.py
+node example.js
+# or
+npm start
 ```
 
 The server will start on port 3000 by default. You can change this by setting the `PORT` environment variable.
+
+## Docker Support
+
+Build and run with Docker:
+
+```bash
+docker build -t fal-proxy .
+docker run -p 3000:3000 --env-file .env fal-proxy
+```
+
+Or use Docker Compose:
+
+```bash
+docker-compose up
+```
 
 ## API Endpoints
 
